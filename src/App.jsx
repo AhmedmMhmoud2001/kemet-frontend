@@ -16,7 +16,7 @@ import './index.css';
 import Login from './admin/auth/Login';
 import Dashboard from './admin/Dashboard/Dashboard';
 import ProtectedRoute from './admin/ProtectedRoute';
-import AdminProjects from './admin/AdminProjects/AdminProjects';
+import AdminProjects from './admin/AdminProjects/Adminprojects';
 import AddProject from './admin/AdminProjects/AddProject';
 import EditProject from './admin/AdminProjects/EditProject';
 import AdminServices from './admin/AdminServices/Services';
