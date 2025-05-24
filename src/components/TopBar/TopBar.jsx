@@ -1,5 +1,5 @@
 import React from 'react';
-import './TopBar.css';
+import './topbar.css';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const TopBar = () => {
