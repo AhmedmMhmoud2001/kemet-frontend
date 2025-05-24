@@ -1,0 +1,69 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5140b;
+  padding: 10px 20px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-icon {
+  margin-right: 8px;
+  color: white !important;
+  font-size: 16px;
+}
+
+.topbar-link {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  transition: color 0.3s;
+  border: none;
+  outline: none;
+}
+
+/* ====================== Responsive Style ====================== */
+
+@media (max-width: 576px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .topbar-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .topbar-icon {
+    font-size: 14px;
+  }
+
+  .topbar-link {
+    font-size: 13px;
+  }
+}

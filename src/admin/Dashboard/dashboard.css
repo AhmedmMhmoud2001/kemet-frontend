@@ -1,0 +1,47 @@
+.dashboard-container {
+  padding: 3rem;
+  text-align: center;
+}
+
+.dashboard-container h2 {
+  color: #004080;
+  margin-bottom: 2rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+.dashboard-card {
+  display: block;
+  padding: 1rem;
+  background-color: #004080;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.dashboard-card:hover {
+  background-color: #0055aa;
+}
+
+.logout-button {
+  background-color: crimson;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-button:hover {
+  background-color: darkred;
+}

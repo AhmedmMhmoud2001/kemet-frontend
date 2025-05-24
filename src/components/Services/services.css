@@ -1,0 +1,29 @@
+.services-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services-section h2 {
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.service-card {
+  background: #fcfcfc;
+  border: 1px solid #f1f0f0;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: left;
+  border-radius: 8px;
+}
+.service-card p{
+  opacity: .7;
+}

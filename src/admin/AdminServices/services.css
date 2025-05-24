@@ -1,0 +1,32 @@
+.admin-services {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.service-form input,
+.service-form textarea {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-list li {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}

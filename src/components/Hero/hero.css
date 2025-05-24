@@ -1,0 +1,99 @@
+.hero-slider-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 80vh;
+  height: auto;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* ظل أسود نصف شفاف */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  background-color: #e5140b;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: #b91108;
+  outline: none;
+}
+
+/* Swiper pagination dots customization */
+.swiper-pagination-bullets {
+  bottom: 15px !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px !important;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e5140b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-image {
+    height: 350px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
