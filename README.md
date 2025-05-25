@@ -35,4 +35,7 @@ npm install
 npm run dev
 
 
-  
+  # ملف البيئة .env
+PORT=5000
+MONGO_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/kemetDB
+JWT_SECRET=your_jwt_secret
