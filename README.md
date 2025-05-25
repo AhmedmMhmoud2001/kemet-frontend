@@ -17,13 +17,22 @@
 
 ## 🚀 لتشغيل المشروع كاملًا محليًا
 
+
 ### 🔻 استنساخ المستودعين من GitHub
 
 ```bash
-# نسخ الفرونت
+# لتشغيل المشروع كاملًا محليًا
 git clone https://github.com/AhmedmMhmoud2001/kemet-frontend.git
+cd kemet-frontend
+npm install
+npm run dev
+
 
 # نسخ الباك (افتراضيًا في نفس المشروع أو backend/)
 git clone https://github.com/AhmedmMhmoud2001/kemet-backend.git
+cd kemet-backend
+npm install
+npm run dev
+
 
   
