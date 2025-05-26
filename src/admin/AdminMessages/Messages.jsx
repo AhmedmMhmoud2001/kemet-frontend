@@ -7,12 +7,30 @@ const Messages = () => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
+    fetchMessages();
+  }, [token]);
+
+  const fetchMessages = () => {
     axios.get('/api/contact', {
       headers: { 'x-auth-token': token }
     })
       .then(res => setMessages(res.data))
       .catch(err => console.error('Error fetching messages:', err));
-  }, [token]);
+  };
+
+  const handleDelete = async (id) => {
+    const confirm = window.confirm('Are you sure you want to delete this message?');
+    if (!confirm) return;
+
+    try {
+      await axios.delete(`/api/contact/${id}`, {
+        headers: { 'x-auth-token': token }
+      });
+      setMessages(messages.filter(msg => msg._id !== id));
+    } catch (err) {
+      alert('Failed to delete message'+err);
+    }
+  };
 
   return (
     <div className="admin-messages">
@@ -28,6 +46,7 @@ const Messages = () => {
               <p><strong>Phone:</strong> {msg.phone || '—'}</p>
               <p><strong>Message:</strong> {msg.message}</p>
               <p><em>{new Date(msg.createdAt).toLocaleString()}</em></p>
+              <button className="delete-msg-btn" onClick={() => handleDelete(msg._id)}>Delete</button>
             </li>
           ))}
         </ul>

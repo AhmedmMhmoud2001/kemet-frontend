@@ -4,11 +4,11 @@ import './Clients.css'
 
 const Clients = () => {
   const clients = [
-    { name: 'Sinai Cement', logo: '/clients/sinai.png' },
-    { name: 'Armed Forces', logo: '/clients/armed-forces.png' },
-    { name: 'Vicat', logo: '/clients/vicat.png' },
-    { name: 'Suez Cement', logo: '/clients/suez.png' },
-    { name: 'National Cement', logo: '/clients/national.png' }
+    { name: 'Sinai Cement', logo: '/clients/client1.png' },
+    { name: 'Armed Forces', logo: '/clients/client1.png' },
+    { name: 'Vicat', logo: '/clients/client1.png' },
+    { name: 'Suez Cement', logo: '/clients/client1.png' },
+    { name: 'National Cement', logo: '/clients/client1.png' }
   ];
 
   const settings = {

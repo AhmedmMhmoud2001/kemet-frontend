@@ -29,7 +29,7 @@ textarea {
 
 button {
   padding: 10px;
-  background: #e5140b;
+  background: #f50d05;
   color: white;
   border: none;
   border-radius: 8px;
@@ -38,7 +38,7 @@ button {
 }
 
 button:hover {
-  background: #0056b3;
+  background: #e5140b;
 }
 
 .error {

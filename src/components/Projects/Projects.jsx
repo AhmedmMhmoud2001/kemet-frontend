@@ -23,7 +23,7 @@ const Projects = () => {
 
   const sliderSettings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,

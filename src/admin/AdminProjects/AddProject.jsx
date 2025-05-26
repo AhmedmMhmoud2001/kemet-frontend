@@ -34,7 +34,7 @@ const AddProject = () => {
         }
       });
       alert('Project added successfully!');
-      navigate('/admin/projects');
+      navigate('/admin/adminprojects');
     } catch (err) {
       alert('Failed to add project'+err);
     }

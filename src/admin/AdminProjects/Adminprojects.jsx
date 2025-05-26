@@ -37,7 +37,7 @@ const Projects = () => {
   return (
     <div className="admin-projects">
       <h2>All Projects</h2>
-      <Link to="/admin/projects/add">
+      <Link to="/admin/adminprojects/add">
         <button className="add-btn">Add New Project</button>
       </Link>
 
