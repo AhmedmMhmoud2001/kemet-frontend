@@ -14,29 +14,43 @@
   font-weight: bold;
 }
 
-.admin-projects .projects-list {
+.admin-projects .admin-projects-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.admin-projects .project-card {
+.admin-projects .admin-project-card {
   display: flex;
-  gap: 1rem;
+  flex-direction: row;
+  flex-wrap:  wrap;
+  align-items: center;
+  justify-content: space-around;
   border: 1px solid #ddd;
   border-radius: 6px;
   background: #f9f9f9;
+  min-height: 150px;
+
+  padding:20px 50px;
+
 }
 
-.admin-projects .project-card img {
+.admin-projects .admin-project-card img {
   width: 150px;
   height: 100px;
   object-fit: cover;
   border-radius: 4px;
+  padding-right: 20px;
 }
 
-.admin-projects .project-details {
+.admin-projects .admin-project-details {
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 .admin-projects .project-actions {
@@ -45,7 +59,8 @@
   gap: 1rem;
 }
 
-.admin-projects .edit-btn, .delete-btn {
+.admin-projects .edit-btn,
+.delete-btn {
   padding: 0.5rem 0.75rem;
   font-weight: bold;
   border: none;
@@ -62,13 +77,6 @@
   background-color: crimson;
   color: white;
 }
-
-
-
-
-
-
-
 
 .project-form {
   display: flex;

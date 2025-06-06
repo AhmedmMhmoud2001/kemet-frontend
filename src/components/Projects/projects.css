@@ -41,10 +41,9 @@
   max-height: 500px;
 }
 
-
 .project-card img {
   width: 100%;
-  height: 230px;
+  height: 400px;
   object-fit: cover; /* تغطية كاملة دون تشوه */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -60,14 +59,4 @@
 .project-card p {
   font-size: 0.95rem;
   color: #555;
-}
-
-@media (max-width: 768px) {
-  .project-card img {
-    height: 200px;
-  }
-
-  .project-card {
-    min-height: 420px;
-  }
 }

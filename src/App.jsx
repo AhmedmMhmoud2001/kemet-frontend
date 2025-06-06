@@ -18,7 +18,7 @@ import Dashboard from './admin/Dashboard/Dashboard';
 import ProtectedRoute from './admin/ProtectedRoute';
 import AdminProjects from './admin/AdminProjects/Adminprojects';
 import AddProject from './admin/AdminProjects/AddProject';
-import EditProject from './admin/AdminProjects/EditProject';
+// import EditProject from './admin/AdminProjects/EditProject';
 import AdminServices from './admin/AdminServices/Services';
 import Messages from './admin/AdminMessages/Messages';
 
@@ -36,9 +36,9 @@ function App() {
 <Route path="/admin/adminprojects/add" element={
   <ProtectedRoute><AddProject /></ProtectedRoute>
 } />
-<Route path="/admin/projects/edit/:id" element={
+{/* <Route path="/admin/projects/edit/:id" element={
   <ProtectedRoute><EditProject /></ProtectedRoute>
-} />
+} /> */}
 <Route path="/admin/services" element={
   <ProtectedRoute><AdminServices/></ProtectedRoute>
 } />
@@ -52,10 +52,11 @@ function App() {
           <TopBar />
           <Navbar />
           <Hero />
+          <About />
           <Services />
           <Projects />
           <Clients />
-          <About />
+          
           <Contact />
           <Footer />
         </>
