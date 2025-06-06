@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './contact.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
-  const [successMsg, setSuccessMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState("");
 
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Invalid email format';
+      newErrors.email = "Invalid email format";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = "Phone number is required";
     } else if (!/^\d{10,15}$/.test(formData.phone)) {
-      newErrors.phone = 'Invalid phone number';
+      newErrors.phone = "Invalid phone number";
     }
 
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.message.trim()) newErrors.message = "Message is required";
 
     return newErrors;
   };
@@ -43,13 +43,16 @@ const Contact = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      const res = await axios.post(
+        "http://localhost:5000/api/contact",
+        formData
+      );
       setSuccessMsg(res.data.msg);
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: "", email: "", phone: "", message: "" });
       setErrors({});
     } catch (error) {
-      console.error('An error occurred while sending the message:', error);
-      setSuccessMsg('');
+      console.error("An error occurred while sending the message:", error);
+      setSuccessMsg("");
     }
   };
 
@@ -84,7 +87,9 @@ const Contact = () => {
         <textarea
           placeholder="Write your message here..."
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
         />
         {errors.message && <span className="error">{errors.message}</span>}
 

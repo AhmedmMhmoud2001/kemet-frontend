@@ -2,18 +2,17 @@
   background-color: #fff;
   padding: 4rem 2rem;
   text-align: center;
-  
 }
 .clients-section h2 {
-font-size: 2rem;
+  font-size: 2rem;
 }
 .client-slide {
   padding: 1rem;
 }
 
-
 .client-slide img {
   max-width: 150px;
+  height: 100px;
   margin: auto;
   display: block;
   object-fit: contain;
@@ -22,4 +21,5 @@ font-size: 2rem;
 .client-slide p {
   margin-top: 0.5rem;
   font-size: 1rem;
+  font-weight: 500;
 }

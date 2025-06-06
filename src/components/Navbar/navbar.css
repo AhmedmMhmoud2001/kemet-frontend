@@ -5,15 +5,18 @@
   align-items: center;
   background: white;
   padding: 1rem 2rem;
-   position: sticky;   /* هذا هو السر */
-   top: 0; 
+  position: sticky; /* هذا هو السر */
+  top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Amiri";
+  font-size: large;
+  font-weight: 900;
 }
 
 /* شعار الموقع */
 .logo {
- width: 50px;
+  width: 60px;
 }
 
 /* قائمة الروابط */
@@ -48,7 +51,7 @@
 }
 
 /* ======= Responsive ======= */
-@media (max-width:  576px) {
+@media (max-width: 576px) {
   .nav-links {
     flex-direction: column;
     background: white;

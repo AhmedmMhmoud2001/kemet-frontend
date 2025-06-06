@@ -3,7 +3,7 @@
   background: #f9f9f9;
   text-align: center;
 }
-.contact-section h2{
+.contact-section h2 {
   font-size: 2rem;
 }
 
@@ -15,7 +15,8 @@ form {
   gap: 15px;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;

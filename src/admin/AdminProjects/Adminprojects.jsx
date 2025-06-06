@@ -41,18 +41,18 @@ const Projects = () => {
         <button className="add-btn">Add New Project</button>
       </Link>
 
-      <div className="projects-list">
+      <div className="admin-projects-list">
         {projects.map(p => (
-          <div key={p._id} className="project-card">
+          <div key={p._id} className="admin-project-card">
             <img src={p.imageUrl} alt={p.title} />
-            <div className="project-details">
+            <div className="admin-project-details">
               <h3>{p.title}</h3>
               <p>{p.description}</p>
               <p><strong>Service:</strong> {p.service?.name || '—'}</p>
               <div className="project-actions">
-                <Link to={`/admin/projects/edit/${p._id}`}>
+                {/* <Link to={`/admin/projects/edit/${p._id}`}>
                   <button className="edit-btn">Edit</button>
-                </Link>
+                </Link> */}
                 <button className="delete-btn" onClick={() => handleDelete(p._id)}>Delete</button>
               </div>
             </div>

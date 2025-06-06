@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './projects.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./projects.css";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/projects')
-      .then(res => setProjects(res.data))
-      .catch(err => console.error('Error fetching projects:', err));
+    axios
+      .get("/api/projects")
+      .then((res) => setProjects(res.data))
+      .catch((err) => console.error("Error fetching projects:", err));
   }, []);
 
   const groupedProjects = projects.reduce((acc, project) => {
-    const serviceName = project.service?.name || 'Other';
+    const serviceName = project.service?.name || "Other";
     if (!acc[serviceName]) acc[serviceName] = [];
     acc[serviceName].push(project);
     return acc;
@@ -32,13 +33,13 @@ const Projects = () => {
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2 }
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1 }
-      }
-    ]
+        settings: { slidesToShow: 1 },
+      },
+    ],
   };
 
   return (
@@ -49,16 +50,18 @@ const Projects = () => {
           <div key={service} className="project-group">
             <h3>{service}</h3>
             <Slider {...sliderSettings} className="project-slider">
-              {serviceProjects.map(p => (
+              {serviceProjects.map((p) => (
                 <div key={p._id} className="project-card">
                   {p.imageUrl && (
                     <img
-                      src={p.imageUrl.startsWith('http') ? p.imageUrl : `${p.imageUrl}`}
+                      src={
+                        p.imageUrl.startsWith("http")
+                          ? p.imageUrl
+                          : `${p.imageUrl}`
+                      }
                       alt={p.title}
                     />
                   )}
-                  <h4>{p.title}</h4>
-                  <p>{p.description}</p>
                 </div>
               ))}
             </Slider>
