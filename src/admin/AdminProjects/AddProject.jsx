@@ -7,6 +7,7 @@ const AddProject = () => {
   const [form, setForm] = useState({ title: "", description: "", service: "" });
   const [image, setImage] = useState(null);
   const [services, setServices] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
@@ -22,6 +23,7 @@ const AddProject = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // Disable button
     const formData = new FormData();
     formData.append("title", form.title);
     formData.append("description", form.description);
@@ -38,7 +40,9 @@ const AddProject = () => {
       alert("Project added successfully!");
       navigate("/admin/adminprojects");
     } catch (err) {
-      alert("Failed to add project" + err);
+      alert("Failed to add project: " + err.message);
+    } finally {
+      setIsSubmitting(false); // Re-enable button
     }
   };
 
@@ -83,8 +87,8 @@ const AddProject = () => {
           onChange={(e) => setImage(e.target.files[0])}
           required
         />
-        <button type="submit" className="add-btn">
-          Add Project
+        <button type="submit" className="add-btn" disabled={isSubmitting}>
+          {isSubmitting ? "Adding..." : "Add Project"}
         </button>
       </form>
     </div>
