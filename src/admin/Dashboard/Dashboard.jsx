@@ -26,6 +26,9 @@ const Dashboard = () => {
         <Link to="/admin/messages" className="dashboard-card">
           📬 Contact Messages
         </Link>
+        <Link to="/admin/ChangePassword" className="dashboard-card">
+           ChangePassword
+        </Link>
         <button className="logout-button" onClick={handleLogout}>
           🚪 Logout
         </button>

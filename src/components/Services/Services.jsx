@@ -6,7 +6,7 @@ const Services = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/services")
+      .get("/api/services")
       .then((res) => setServices(res.data))
       .catch((err) => console.error("Error fetching services:", err));
   }, []);

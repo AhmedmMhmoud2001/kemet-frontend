@@ -12,25 +12,22 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
   const [successMsg, setSuccessMsg] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false); // 🔸 حالة التعطيل
 
   const validate = () => {
     const newErrors = {};
-
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
-
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\d{10,15}$/.test(formData.phone)) {
       newErrors.phone = "Invalid phone number";
     }
-
     if (!formData.message.trim()) newErrors.message = "Message is required";
-
     return newErrors;
   };
 
@@ -42,17 +39,18 @@ const Contact = () => {
       return;
     }
 
+    setIsSubmitting(true); // 🔸 تعطيل الزر
+
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/contact",
-        formData
-      );
+      const res = await axios.post("http://localhost:5000/api/contact", formData);
       setSuccessMsg(res.data.msg);
       setFormData({ name: "", email: "", phone: "", message: "" });
       setErrors({});
     } catch (error) {
       console.error("An error occurred while sending the message:", error);
       setSuccessMsg("");
+    } finally {
+      setIsSubmitting(false); // 🔸 إعادة تفعيل الزر بعد الإرسال
     }
   };
 
@@ -93,7 +91,9 @@ const Contact = () => {
         />
         {errors.message && <span className="error">{errors.message}</span>}
 
-        <button type="submit">Send</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send"}
+        </button>
 
         {successMsg && <p className="success">{successMsg}</p>}
       </form>

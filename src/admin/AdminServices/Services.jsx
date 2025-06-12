@@ -5,6 +5,7 @@ import "./services.css";
 const Services = () => {
   const [services, setServices] = useState([]);
   const [form, setForm] = useState({ name: "", description: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false); // ✅ حالة لتعطيل الزر
   const token = localStorage.getItem("token");
 
   const fetchServices = async () => {
@@ -18,6 +19,8 @@ const Services = () => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // 🔒 تعطيل الزر
+
     try {
       await axios.post("/api/services", form, {
         headers: { "x-auth-token": token },
@@ -26,6 +29,8 @@ const Services = () => {
       fetchServices();
     } catch (err) {
       alert("Failed to add service" + err);
+    } finally {
+      setIsSubmitting(false); // 🔓 تفعيل الزر مجددًا
     }
   };
 
@@ -64,7 +69,9 @@ const Services = () => {
           onChange={(e) => setForm({ ...form, description: e.target.value })}
           required
         />
-        <button type="submit">Add Service</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Adding..." : "Add Service"}
+        </button>
       </form>
 
       <ul className="service-list">

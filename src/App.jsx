@@ -21,6 +21,7 @@ import AddProject from './admin/AdminProjects/AddProject';
 // import EditProject from './admin/AdminProjects/EditProject';
 import AdminServices from './admin/AdminServices/Services';
 import Messages from './admin/AdminMessages/Messages';
+import ChangePassword from './admin/auth/ChangePassword'
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
 } />
 <Route path="/admin/messages" element={
   <ProtectedRoute><Messages /></ProtectedRoute>
+} />
+<Route path="/admin/ChangePassword" element={
+  <ProtectedRoute><ChangePassword /></ProtectedRoute>
 } />
 
       {/* 🌐 الموقع العام */}
